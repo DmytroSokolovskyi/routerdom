@@ -28,7 +28,7 @@ class App extends Component {
                     </div>
                     <div className={'app-class'}>
                         <Switch>
-                            <Route path={'/users'} render={() => {
+                            <Route path={'/users'}  render={() => {
                                 return <Allusers/>;
                             }}/>
 

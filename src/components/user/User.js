@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 
 import {
     BrowserRouter as Router,
+    withRouter,
     Switch,
     Route,
     Link
@@ -9,13 +10,14 @@ import {
 
 class User extends Component {
     render() {
-        let {user} = this.props;
+        let {user, match : {url}} = this.props;
+        console.log(this.props);
         return (
             <div>
-                {user.name} - <Link to={`/users/${user.id}`}>info</Link>
+                {user.name} - <Link to={`${url}/${user.id}`}>info</Link>
             </div>
         );
     }
 }
 
-export default User;
+export default withRouter(User);
