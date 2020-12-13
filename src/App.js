@@ -34,7 +34,7 @@ class App extends Component {
 
                             <Route path={'/posts'} render={() => {
                              return <Allposts/>;
-                            }} />
+                            }}/>
                             <Route path={'/coments'} render={() =>{
                              return <Allcoments/>
                             }}/>

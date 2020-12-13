@@ -11,7 +11,7 @@ import {
 class User extends Component {
     render() {
         let {user, match : {url}} = this.props;
-        console.log(this.props);
+
         return (
             <div>
                 {user.name} - <Link to={`${url}/${user.id}`}>info</Link>

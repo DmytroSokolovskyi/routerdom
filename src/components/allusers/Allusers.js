@@ -11,30 +11,29 @@ import {
 } from "react-router-dom";
 import FullUser from "../fullUser/FullUser";
 
-
 class Allusers extends Component {
     state = {alluser: []}
     userServise = new UserServise();
 
     async componentDidMount() {
         let users = await this.userServise.users();
-        console.log(users);
         this.setState({alluser: users});
     }
 
     render() {
         let {alluser} = this.state;
-        console.log(this.props);
         let {match: {url}} = this.props;
         return (
             <div>
                 {
                     alluser.map(user => <User user={user} key={user.id}/>)
                 }
-                <div>
+                <div className={'alluser-router'}>
                     <Switch>
-                        <Route path={`${url}/:id`} render={() => {
-                            return <FullUser/>
+                        <Route path={`${url}/:id`} render={(props) => {
+                            console.log(props);
+                            let {match: {params: {id}}} = props;
+                            return <FullUser id={id} key={id}/>
                         }}/>
                     </Switch>
                 </div>
