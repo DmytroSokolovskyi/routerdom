@@ -22,11 +22,10 @@ class FullComment extends Component {
     }
     render() {
         let {comment} = this.state;
-        console.log(comment);
 
         return (
             <div>
-                {comment && <div>{comment.body}____{comment.id}</div> }
+                {comment && <div>{comment.comment.name}____{comment.comment.id}</div> }
             </div>
         );
     }

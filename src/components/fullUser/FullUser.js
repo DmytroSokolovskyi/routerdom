@@ -24,7 +24,7 @@ class FullUser extends Component {
 
         return (
             <div>
-                {user && <div>{user.name}--++--{user.username}</div>}
+                {user && <div>{user.user.name}--++--{user.user.username}</div>}
             </div>
         );
     }

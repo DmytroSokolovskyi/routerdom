@@ -24,7 +24,7 @@ postService = new PostsService()
 
         return (
             <div>
-                {post && <div>{post.body}--++--{post.title}</div>}
+                {post && <div>{post.post.body}--++--{post.post.title}</div>}
             </div>
         );
     }
